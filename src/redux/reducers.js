@@ -7,9 +7,9 @@ const cars = (state = [], action) => {
         case 'ADD_CAR':
             return [ ...state, action.value ]
         case 'REMOVE_CAR':
-            const cars = [ ...state ]
-            cars.splice(action.value, 1)
-            return cars
+            const updatedCars = [ ...state ]
+            updatedCars.splice(action.value, 1)
+            return updatedCars
         default:
             return state
     }
@@ -17,8 +17,8 @@ const cars = (state = [], action) => {
 
 const makes = (state = [], action) => {
     switch(action.type) {
-        case "FETCH_MAKES";
-        return action.value;
+        case "FETCH_MAKES":
+            return action.value;
         default:
             return state
     }
